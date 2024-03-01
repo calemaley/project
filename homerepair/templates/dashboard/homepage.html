@@ -1,0 +1,129 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}Homepage{% endblock %}
+  <!--Welcome picture section-->
+  {% block content %}
+  <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h1>HandyHome home repair services</h1>
+            <p class="p-text">Home in need of repairs? Don't worry, we've got you covered! From plumbing to electrical, HVAC to window repair, our team of experienced professionals delivers top-notch home repair services. We're committed to restoring the comfort and functionality of your home.Order service online  today for a hassle-free experience!</p>
+        </div>
+    </div>
+  
+      {% comment %} ADVERTISED CARDS SECTION {% endcomment %}
+
+         {% comment %} FIRST ROW OF ADVERTISEMENT CARDS {% endcomment %}
+
+      <div class="advert-cards">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Plumbing</h5>
+                          <p class="card-text">“Experience swift, reliable plumbing solutions. Your satisfaction, our priority. Call us for exceptional service today!”</p>
+                        </div>
+                      </div>
+                </div>      
+                <div class="col">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">HVAC</h5>
+                          <p class="card-text">“Stay cool in summer, warm in winter. Our HVAC services ensure your comfort all year round!”</p>
+                        </div>
+                      </div>
+                </div>      
+                <div class="col">
+                    <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Electrical</h5>
+                          <p class="card-text">“Powering your world with efficiency. Trust our electrical services for safe, reliable solutions. Contact us now!”</p>
+                        </div>
+                      </div>
+                </div>      
+
+                <div class="col">
+                  <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                      <div class="card-header"></div>
+                      <div class="card-body">
+                        <h5 class="card-title">Handyman</h5>
+                        <p class="card-text">Get a handyman to help you install or fix damages all around the house</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Capentry</h5>
+                          <p class="card-text">Get all your wooden wardrobes,cupboard, drawers etc fixed for you and made look as if new</p>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+
+              {% comment %} SECOND ROW OF ADVERTISEMENT CARDS {% endcomment %}
+
+        <div class="advert-cards">
+          <div class="container mt-5">
+              <div class="row">
+                  <div class="col">
+                      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                          <div class="card-header"></div>
+                          <div class="card-body">
+                            <h5 class="card-title">Gardening</h5>
+                            <p class="card-text">Get your home gardens taken care of and your broken garden equipment fixed</p>
+                          </div>
+                        </div>
+                  </div> 
+
+                  <div class="col">
+                      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                          <div class="card-header"></div>
+                          <div class="card-body">
+                            <h5 class="card-title">Installation</h5>
+                            <p class="card-text">Get your new appliances fixed correctly by our skillfull professionals</p>
+                          </div>
+                        </div>
+                  </div>  
+
+                  <div class="col">
+                      <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                          <div class="card-header"></div>
+                          <div class="card-body">
+                            <h5 class="card-title">Roofing</h5>
+                            <p class="card-text">Get your roofs installed, fixed or changed </p>
+                          </div>
+                        </div>
+                  </div>      
+  
+                  <div class="col">
+                    <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">Baby Proofing</h5>
+                          <p class="card-text">“Ensure your child's safety with our comprehensive, easy-to-install baby-proofing solutions. Peace of mind in every corner.” </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col">
+                      <div class="card text-white  bg-dark mb-3" style="max-width: 18rem;height:280px;">
+                          <div class="card-header"></div>
+                          <div class="card-body">
+                            <h5 class="card-title">Window repair</h5>
+                            <p class="card-text">“Broken windows? No problem! Quick, professional window repair services to restore your view and security.</p>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+          </div>
+          </div>
+  {% endblock %}

@@ -1,0 +1,132 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}Index page{% endblock %}
+  <!--Table-->
+{% block content %}
+{% if user.is_authenticated and user.is_staff and user.is_superuser%}
+{% include 'partials/topnav.html' %}
+<body>
+   
+    <div class="container">
+        {% comment %} FIRST ROW  {% endcomment %}
+        <div class="row">
+            <div class="col-md-1 mt-4">
+                {% comment %} <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Information
+                    </div>
+                    <div class="card-body">
+                        <marquee behavior="" direction="">
+                            <h3 class="my-4">New Information</h3>
+                        </marquee>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+            <div class="col-md-11 mt-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Dashboard Stats
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-serviceprovider' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>service provider</h4>
+                                            <h3>{{ provider_count }}</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-servicemanage' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Services offered</h4>
+                                            <h3>{{ item_count }}</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-booking' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Bookings made</h4>
+                                            <h3>{{ booking_count }}</h3>
+                                        </div>
+                                    </div>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %} SECOND ROW {% endcomment %}
+
+        <div class="row">
+            <div class="col-md-1 mt-4">
+                {% comment %} <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Information
+                    </div>
+                    <div class="card-body">
+                        <marquee behavior="" direction="">
+                            <h3 class="my-4">New Information</h3>
+                        </marquee>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+            <div class="col-md-11 mt-4">
+                <div class="card">
+                    {% comment %} <div class="card-header bg-primary text-white">
+                        Dashboard Stats
+                    </div> {% endcomment %}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-serviceprovider' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Reviews</h4>
+                                            <h3>{{ review_count }}</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                {% comment %} <a class="text-decoration-none text-dark" href="{% url 'dashboard-servicemanage' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Services offered</h4>
+                                            <h3>{{ item_count }}</h3>
+                                        </div>
+                                    </div>
+                                </a> {% endcomment %}
+                            </div>
+                            {% comment %} <div class="col-md-4">
+                                <a class="text-decoration-none text-dark" href="{% url 'dashboard-booking' %}">
+                                    <div class="card my-card shadow">
+                                        <div class="card-body text-center">
+                                            <h4>Bookings made</h4>
+                                            <h3>{{ booking_count }}</h3>
+                                        </div>
+                                    </div>
+
+                                </a>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% else %}
+{% include 'dashboard/customer.html' %}
+{% endif %}
+{% endblock %}

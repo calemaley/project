@@ -1,0 +1,52 @@
+{% extends "partials/base.html" %}
+{% load crispy_forms_tags%}
+{% block title %}Services page{% endblock %}
+  <!--Table-->
+  {% block content%}
+  {% include 'partials/topnav.html' %}
+<div class="container">
+  <div class="row my-3">
+      <div class="col-md-3">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+              {{ message }}
+          </div>
+          {% endfor %}
+          <div class="border bg-white p-3">
+              <h4>Add Service</h4>
+              <hr>
+              <form method="POST">
+                  {% csrf_token %}
+                  {{ form|crispy}}
+                  <input class="btn btn-success btn-block" type="submit" value="Add">
+
+              </form>
+          </div>
+      </div>
+      <div class="col-md-9">
+          <table class="table bg-white">
+              <thead class="bg-primary">
+                <tr>
+                  <th scope="col">Description</th>
+                  <th scope="col">Activity</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in items %}
+                <tr>
+                  <td>{{item.category}}</td>
+                  <td>{{item.description}}</td>
+                  <td>
+                      <a class="btn btn-info btn-sm" href="{% url 'dashboard-service-update' item.id %}">Edit</a>
+                      <a class="btn btn-danger btn-sm" href="{% url 'dashboard-service-delete' item.id %}">Delete</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+  </div>
+{%endblock%}

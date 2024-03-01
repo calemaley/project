@@ -1,0 +1,29 @@
+{% extends "partials/base.html" %}
+{% block title %}Bookings list page{% endblock %}
+{% block content %}
+{% include 'partials/topnav.html' %}
+    <div class="container">
+        <h2>Booking Management</h2>
+        <h3>Booking Requests</h3>
+        <table class="table bg-white">
+            <thead class="bg-primary">
+                <tr class="text-white">
+                    <th scope="col">Service</th>
+                    <th scope="col">Ordered by</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.service}}</td>
+                    <td>{{booking.staff.username}}</td>
+                    <td>{{booking.date}}</td>
+                    <td>{{booking.time}}</td>
+                </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+.welcome-section{
+    height: 40rem;
+    background-image:linear-gradient(rgba(67, 72, 202, 0.5),rgba(67,72,202,0.5)), url('../../media/images/fix.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left:30px;
+    padding-top:10em;
+} 
+.welcome-text{
+    width:40em;
+}
+h1{
+    color: white;
+    font-size: 3em;
+    font-weight: 700;
+}
+.p-text{
+    color:white;
+    font-size: 1.8em;
+    font-weight: 500;
+}

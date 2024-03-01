@@ -1,0 +1,55 @@
+{% extends "partials/base.html" %}
+{% block title %}Services page{% endblock %}
+{% load crispy_forms_tags %}
+  <!--Table-->
+  {% block content%}
+  {% include 'partials/topnav.html' %}
+    <div class="container">
+    <div class="row my-3">
+        <div class="col-md-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="border bg-white p-3">
+                <h4>Add Service provider</h4>
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy}}
+                    <input class="btn btn-success btn-block" type="submit" value="Add">
+
+                </form>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <table class="table bg-white">
+                <thead class="bg-primary">
+                    <tr class="text-white">
+                        <th scope="col">Name</th>
+                        <th scope="col">Specialization</th>
+                        <th scope="col">email</th>
+                        <th scope="col">Phone number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for provider in providers%}
+                    <tr>
+                        <td>{{provider.name}}</td>
+                        <td>{{provider.specialization}}</td>
+                        <td>{{provider.email}}</td>
+                        <td>
+                            {{provider.number}}
+                        </td>
+                    </tr>
+                    {% endfor %} 
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+
+
+    {% endblock %}

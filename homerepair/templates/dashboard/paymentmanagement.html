@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h4>Payment Management</h4>
+        </div>
+        <div class="dashboard-body">
+        <div class="payment-button" id="paypalButton">
+            <input type="button" value="PayPal" onclick="handlePayment('PayPal')">
+        </div>
+        <div class="payment-button" id="creditCardButton">
+            <input type="button" value="Credit Card" onclick="handlePayment('Credit Card')">
+        </div>
+        <div class="payment-button" id="MpesaButton">
+            <input type="button" value="Mpesa" onclick="handlePayment('Venmo')">
+        </div>
+    </div>
+</body>
+</html>
